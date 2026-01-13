@@ -109,46 +109,7 @@ export default function HomePage() {
           opacity: 1;
           transform: translateY(0);
         }
-        .glitch-text {
-          position: relative;
-        }
-        .glitch-text::before,
-        .glitch-text::after {
-          content: attr(data-text);
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-        .glitch-text::before {
-          left: 2px;
-          text-shadow: -1px 0 #ff00c1;
-          clip: rect(44px, 450px, 56px, 0);
-          animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-        .glitch-text::after {
-          left: -2px;
-          text-shadow: -1px 0 #00fff9;
-          clip: rect(44px, 450px, 56px, 0);
-          animation: glitch-anim2 5s infinite linear alternate-reverse;
-        }
-        @keyframes glitch-anim {
-          0% { clip: rect(34px, 9999px, 11px, 0); }
-          20% { clip: rect(68px, 9999px, 89px, 0); }
-          40% { clip: rect(12px, 9999px, 67px, 0); }
-          60% { clip: rect(94px, 9999px, 23px, 0); }
-          80% { clip: rect(4px, 9999px, 56px, 0); }
-          100% { clip: rect(56px, 9999px, 12px, 0); }
-        }
-        @keyframes glitch-anim2 {
-          0% { clip: rect(14px, 9999px, 91px, 0); }
-          20% { clip: rect(28px, 9999px, 19px, 0); }
-          40% { clip: rect(82px, 9999px, 27px, 0); }
-          60% { clip: rect(14px, 9999px, 93px, 0); }
-          80% { clip: rect(24px, 9999px, 36px, 0); }
-          100% { clip: rect(76px, 9999px, 42px, 0); }
-        }
+
         .circuit-grid {
           background-image: linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
           linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
@@ -195,8 +156,7 @@ export default function HomePage() {
 
           <AnimatedElement delay={400} className="relative">
             <h1 
-              className="text-[15vw] md:text-[12rem] leading-[0.8] font-heading font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 glitch-text select-none"
-              data-text="FUSION"
+              className="text-[15vw] md:text-[12rem] leading-[0.8] font-heading font-black text-primary select-none"
             >
               FUSION
             </h1>

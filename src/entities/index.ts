@@ -36,6 +36,22 @@ export interface HackathonEvents {
   _updatedDate?: Date;
   /** @wixFieldType text */
   eventName?: string;
+  /** @wixFieldType text */
+  instagramHandle?: string;
+  /** @wixFieldType url */
+  websiteUrl?: string;
+  /** @wixFieldType text */
+  contactPhone?: string;
+  /** @wixFieldType text */
+  prizesAndPerks?: string;
+  /** @wixFieldType boolean */
+  lunchIncluded?: boolean;
+  /** @wixFieldType number */
+  maxTeamSize?: number;
+  /** @wixFieldType text */
+  registrationFee?: string;
+  /** @wixFieldType text */
+  prizePool?: string;
   /** @wixFieldType date */
   eventDate?: Date | string;
   /** @wixFieldType text */
@@ -46,20 +62,4 @@ export interface HackathonEvents {
   eventTheme?: string;
   /** @wixFieldType number */
   numberOfParticipants?: number;
-  /** @wixFieldType text */
-  prizePool?: string;
-  /** @wixFieldType text */
-  registrationFee?: string;
-  /** @wixFieldType number */
-  maxTeamSize?: number;
-  /** @wixFieldType boolean */
-  lunchIncluded?: boolean;
-  /** @wixFieldType text */
-  prizesAndPerks?: string;
-  /** @wixFieldType text */
-  contactPhone?: string;
-  /** @wixFieldType url */
-  websiteUrl?: string;
-  /** @wixFieldType text */
-  instagramHandle?: string;
 }

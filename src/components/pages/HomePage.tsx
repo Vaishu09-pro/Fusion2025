@@ -100,6 +100,8 @@ export default function HomePage() {
     <div className="min-h-screen bg-background text-foreground overflow-clip selection:bg-primary selection:text-background font-paragraph">
       {/* Global Styles for Custom Animations */}
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
         .animate-reveal {
           opacity: 0;
           transform: translateY(30px);
@@ -114,6 +116,16 @@ export default function HomePage() {
           background-image: linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
           linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
           background-size: 50px 50px;
+        }
+
+        .retro-title {
+          font-family: 'Righteous', sans-serif;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          font-weight: 700;
+          text-shadow: 
+            3px 3px 0px rgba(255, 140, 0, 0.6),
+            6px 6px 0px rgba(255, 140, 0, 0.3);
         }
       `}</style>
 
@@ -156,7 +168,7 @@ export default function HomePage() {
 
           <AnimatedElement delay={400} className="relative">
             <h1 
-              className="text-[15vw] md:text-[12rem] leading-[0.8] font-heading font-black text-primary select-none"
+              className="text-[15vw] md:text-[12rem] leading-[0.8] font-black text-primary select-none retro-title"
             >
               FUSION
             </h1>

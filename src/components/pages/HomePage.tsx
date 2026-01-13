@@ -154,9 +154,9 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="relative z-20 w-full max-w-[120rem] mx-auto px-6 md:px-12 flex flex-col items-center text-center">
           <AnimatedElement className="mb-6">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              <span className="text-sm font-mono text-primary tracking-widest uppercase">System Status: Completed</span>
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-secondary/50 bg-secondary/10 backdrop-blur-sm">
+              <span className="w-2 h-2 rounded-full bg-secondary" />
+              <span className="text-sm font-mono text-secondary tracking-widest uppercase">Event Concluded</span>
             </div>
           </AnimatedElement>
 
@@ -191,15 +191,15 @@ export default function HomePage() {
           </AnimatedElement>
 
           <AnimatedElement delay={800} className="mt-12 flex flex-wrap gap-6 justify-center">
-            <a href="https://www.fusion2025.in" target="_blank" rel="noopener noreferrer" className="group relative px-8 py-4 bg-secondary/10 hover:bg-secondary/20 border border-secondary/50 text-secondary font-heading tracking-wider transition-all duration-300 overflow-hidden">
+            <a href="https://www.fusion2025.in" target="_blank" rel="noopener noreferrer" className="group relative px-8 py-4 bg-foreground/10 border border-foreground/30 text-foreground/60 font-heading tracking-wider transition-all duration-300 overflow-hidden cursor-not-allowed opacity-60">
               <span className="relative z-10 flex items-center gap-2">
-                REGISTER NOW <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                REGISTRATION CLOSED <ChevronRight className="w-4 h-4" />
               </span>
-              <div className="absolute inset-0 bg-secondary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-foreground/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </a>
             <button className="group relative px-8 py-4 bg-primary/10 hover:bg-primary/20 border border-primary/50 text-primary font-heading tracking-wider transition-all duration-300 overflow-hidden">
               <span className="relative z-10 flex items-center gap-2">
-                EXPLORE GALLERY <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                VIEW GALLERY <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
@@ -508,22 +508,24 @@ export default function HomePage() {
       <section className="relative py-24 bg-background border-t border-white/5">
         <div className="max-w-4xl mx-auto text-center px-6">
           <AnimatedElement>
-            <Activity className="w-16 h-16 text-secondary mx-auto mb-8 animate-pulse" />
+            <div className="mb-8 inline-block px-6 py-3 bg-secondary/10 border border-secondary/50 rounded-lg">
+              <p className="text-secondary font-mono font-bold tracking-widest uppercase">Event Concluded</p>
+            </div>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-              READY TO INNOVATE?
+              THANK YOU FOR JOINING FUSION 2025
             </h2>
             <p className="text-xl text-foreground/60 mb-4">
-              Join us for FUSION 2025 - The Ultimate 24-Hour Hackathon Experience
+              Thank you for being part of an incredible 24-hour hackathon experience. We hope you created amazing innovations and made lasting connections!
             </p>
             <p className="text-lg text-foreground/50 mb-10 font-mono">
               📱 +91 9167904386 | 📧 contact@fusion2025.in
             </p>
             <div className="flex justify-center gap-6 flex-wrap">
-              <a href="https://www.fusion2025.in" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-secondary text-background font-bold font-heading tracking-wider hover:bg-secondary/90 transition-colors">
-                REGISTER NOW
+              <a href="/gallery" className="px-10 py-4 bg-primary text-background font-bold font-heading tracking-wider hover:bg-primary/90 transition-colors">
+                VIEW EVENT GALLERY
               </a>
-              <a href="https://www.instagram.com/iic_ecelisknisb" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-primary/10 border border-primary/50 text-primary font-bold font-heading tracking-wider hover:bg-primary/20 transition-colors">
-                FOLLOW US
+              <a href="https://www.instagram.com/iic_ecelisknisb" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-secondary/10 border border-secondary/50 text-secondary font-bold font-heading tracking-wider hover:bg-secondary/20 transition-colors">
+                FOLLOW FOR UPDATES
               </a>
             </div>
           </AnimatedElement>

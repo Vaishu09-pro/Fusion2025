@@ -46,4 +46,20 @@ export interface HackathonEvents {
   eventTheme?: string;
   /** @wixFieldType number */
   numberOfParticipants?: number;
+  /** @wixFieldType text */
+  prizePool?: string;
+  /** @wixFieldType text */
+  registrationFee?: string;
+  /** @wixFieldType number */
+  maxTeamSize?: number;
+  /** @wixFieldType boolean */
+  lunchIncluded?: boolean;
+  /** @wixFieldType text */
+  prizesAndPerks?: string;
+  /** @wixFieldType text */
+  contactPhone?: string;
+  /** @wixFieldType url */
+  websiteUrl?: string;
+  /** @wixFieldType text */
+  instagramHandle?: string;
 }

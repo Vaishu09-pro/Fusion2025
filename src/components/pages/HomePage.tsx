@@ -1,7 +1,7 @@
 // HPI 1.6-V
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
-import { Calendar, MapPin, Users, Trophy, Clock, Target, Cpu, Zap, Code, ChevronRight, Terminal, Activity } from 'lucide-react';
+import { Calendar, MapPin, Users, Trophy, Clock, Target, Cpu, Zap, Code, ChevronRight, Terminal, Activity, Gift, Utensils, QrCode, DollarSign } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CircuitBackground from '@/components/CircuitBackground';
@@ -208,6 +208,9 @@ export default function HomePage() {
             <p className="text-xl md:text-2xl text-primary font-light tracking-wide">
               24-HOUR HACKATHON
             </p>
+            <p className="mt-4 text-2xl md:text-3xl text-secondary font-bold tracking-wide">
+              9<sup>TH</sup> - 10<sup>TH</sup> OCTOBER
+            </p>
             {!loading && eventData && (
               <p className="mt-6 text-foreground/80 text-lg leading-relaxed">
                 {eventData.eventDescription}
@@ -216,6 +219,12 @@ export default function HomePage() {
           </AnimatedElement>
 
           <AnimatedElement delay={800} className="mt-12 flex flex-wrap gap-6 justify-center">
+            <a href="https://www.fusion2025.in" target="_blank" rel="noopener noreferrer" className="group relative px-8 py-4 bg-secondary/10 hover:bg-secondary/20 border border-secondary/50 text-secondary font-heading tracking-wider transition-all duration-300 overflow-hidden">
+              <span className="relative z-10 flex items-center gap-2">
+                REGISTER NOW <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-secondary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            </a>
             <button className="group relative px-8 py-4 bg-primary/10 hover:bg-primary/20 border border-primary/50 text-primary font-heading tracking-wider transition-all duration-300 overflow-hidden">
               <span className="relative z-10 flex items-center gap-2">
                 EXPLORE GALLERY <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -256,57 +265,55 @@ export default function HomePage() {
       </div>
 
       {/* DATA TELEMETRY (STATS) SECTION */}
-      {!loading && eventData && (
-        <section className="relative py-32 w-full max-w-[120rem] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { 
-                label: "Event Date", 
-                value: eventData.eventDate ? new Date(eventData.eventDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'TBA',
-                icon: Calendar,
-                color: "text-primary"
-              },
-              { 
-                label: "Location", 
-                value: eventData.eventLocation || 'Main Campus',
-                icon: MapPin,
-                color: "text-secondary"
-              },
-              { 
-                label: "Participants", 
-                value: `${eventData.numberOfParticipants || 0}+`,
-                icon: Users,
-                color: "text-primary"
-              },
-              { 
-                label: "Theme", 
-                value: eventData.eventTheme || 'Innovation',
-                icon: Target,
-                color: "text-secondary"
-              }
-            ].map((stat, index) => (
-              <AnimatedElement key={index} delay={index * 100} className="h-full">
-                <div className="group relative h-full p-8 bg-background/40 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-colors duration-500 overflow-hidden">
-                  <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
-                    <stat.icon className={`w-12 h-12 ${stat.color}`} />
-                  </div>
-                  <div className="relative z-10 flex flex-col h-full justify-between">
-                    <span className="text-sm font-mono text-foreground/50 uppercase tracking-wider mb-4">{stat.label}</span>
-                    <span className={`text-3xl md:text-4xl font-heading font-bold ${stat.color} group-hover:scale-105 transition-transform duration-300 origin-left`}>
-                      {stat.value}
-                    </span>
-                  </div>
-                  {/* Decorative Corner */}
-                  <div className="absolute bottom-0 left-0 w-2 h-2 bg-primary/50 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute top-0 right-0 w-2 h-2 bg-secondary/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <section className="relative py-32 w-full max-w-[120rem] mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { 
+              label: "Prize Pool", 
+              value: "₹2,00,000+",
+              icon: Trophy,
+              color: "text-secondary"
+            },
+            { 
+              label: "Registration Fee", 
+              value: "₹1,000/-",
+              icon: DollarSign,
+              color: "text-primary"
+            },
+            { 
+              label: "Max Team Size", 
+              value: "4 Members",
+              icon: Users,
+              color: "text-secondary"
+            },
+            { 
+              label: "Lunch Included", 
+              value: "Yes",
+              icon: Utensils,
+              color: "text-primary"
+            }
+          ].map((stat, index) => (
+            <AnimatedElement key={index} delay={index * 100} className="h-full">
+              <div className="group relative h-full p-8 bg-background/40 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-colors duration-500 overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+                  <stat.icon className={`w-12 h-12 ${stat.color}`} />
                 </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </section>
-      )}
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                  <span className="text-sm font-mono text-foreground/50 uppercase tracking-wider mb-4">{stat.label}</span>
+                  <span className={`text-3xl md:text-4xl font-heading font-bold ${stat.color} group-hover:scale-105 transition-transform duration-300 origin-left`}>
+                    {stat.value}
+                  </span>
+                </div>
+                {/* Decorative Corner */}
+                <div className="absolute bottom-0 left-0 w-2 h-2 bg-primary/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 right-0 w-2 h-2 bg-secondary/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+            </AnimatedElement>
+          ))}
+        </div>
+      </section>
 
-      {/* SPLIT CONTENT: MISSION & VISION */}
+      {/* PRIZES & REWARDS SECTION */}
       <section className="relative py-24 w-full overflow-hidden">
         <div className="absolute inset-0 circuit-grid opacity-20 pointer-events-none" />
         
@@ -318,18 +325,18 @@ export default function HomePage() {
                 <AnimatedElement>
                   <div className="flex items-center gap-4 mb-6">
                     <div className="h-[1px] w-12 bg-secondary" />
-                    <span className="text-secondary font-mono uppercase tracking-widest">The Mission</span>
+                    <span className="text-secondary font-mono uppercase tracking-widest">Rewards</span>
                   </div>
                   <h2 className="text-5xl md:text-7xl font-heading font-bold text-white mb-8 leading-tight">
-                    CODING THE <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">FUTURE</span>
+                    PRIZES & <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">PERKS</span>
                   </h2>
                   <p className="text-lg text-foreground/70 leading-relaxed mb-8">
-                    FUSION wasn't just a competition; it was a crucible for innovation. Over 24 intense hours, students transformed abstract concepts into tangible prototypes, pushing the boundaries of what's possible with code.
+                    Win amazing prizes and exclusive rewards. Top teams get recognition, cash prizes, and exciting gadgets!
                   </p>
                   
                   <div className="flex flex-col gap-4">
-                    {['AI & Machine Learning', 'Internet of Things', 'Blockchain Solutions', 'Sustainable Tech'].map((item, i) => (
+                    {['₹2,00,000+ Prize Pool', 'Free Trip to Malvan (2 Teams)', '20,000 Worth Gadgets', 'Lunch & Refreshments'].map((item, i) => (
                       <div key={i} className="flex items-center gap-3 text-foreground/80">
                         <div className="w-1.5 h-1.5 bg-primary rounded-full" />
                         <span className="font-mono text-sm">{item}</span>
@@ -346,13 +353,13 @@ export default function HomePage() {
                 <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-white/10 group">
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
                   <Image
-                    src="https://static.wixstatic.com/media/2836f6_40bd3ef9c84a4942ba72f7339b31cbb7~mv2.png?id=mission-1"
-                    alt="Hackathon Collaboration"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    src="https://static.wixstatic.com/media/2836f6_4364c6d6ad5c457ba691793ee7a8129a~mv2.jpeg?id=fusion-poster"
+                    alt="FUSION 2025 Hackathon Poster"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute bottom-0 left-0 p-8 z-20">
-                    <h3 className="text-2xl font-heading text-white mb-2">Collaborative Synergy</h3>
-                    <p className="text-sm text-foreground/70 max-w-md">Teams merged diverse skill sets to tackle complex problems.</p>
+                    <h3 className="text-2xl font-heading text-white mb-2">FUSION 2025</h3>
+                    <p className="text-sm text-foreground/70 max-w-md">24-Hour Innovation Challenge</p>
                   </div>
                 </div>
               </AnimatedElement>
@@ -360,16 +367,16 @@ export default function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <AnimatedElement delay={300}>
                   <div className="bg-white/5 p-8 rounded-lg border border-white/10 hover:border-primary/50 transition-colors h-full">
-                    <Cpu className="w-10 h-10 text-primary mb-6" />
-                    <h4 className="text-xl font-heading text-white mb-3">Hardware Integration</h4>
-                    <p className="text-sm text-foreground/60">Bridging the gap between software logic and physical reality through IoT devices.</p>
+                    <Gift className="w-10 h-10 text-primary mb-6" />
+                    <h4 className="text-xl font-heading text-white mb-3">Gadget Rewards</h4>
+                    <p className="text-sm text-foreground/60">Win gadgets worth ₹20,000 for top-performing teams.</p>
                   </div>
                 </AnimatedElement>
                 <AnimatedElement delay={400}>
                   <div className="bg-white/5 p-8 rounded-lg border border-white/10 hover:border-secondary/50 transition-colors h-full">
-                    <Zap className="w-10 h-10 text-secondary mb-6" />
-                    <h4 className="text-xl font-heading text-white mb-3">Rapid Prototyping</h4>
-                    <p className="text-sm text-foreground/60">Accelerated development cycles turning ideas into MVPs in record time.</p>
+                    <MapPin className="w-10 h-10 text-secondary mb-6" />
+                    <h4 className="text-xl font-heading text-white mb-3">Malvan Trip</h4>
+                    <p className="text-sm text-foreground/60">Free trip to Malvan for 2 winning teams with all expenses covered.</p>
                   </div>
                 </AnimatedElement>
               </div>
@@ -477,21 +484,75 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CALL TO ACTION / FOOTER PRE-CURSOR */}
+      {/* QUICK INFO SECTION */}
+      <section className="relative py-24 bg-background/50 border-t border-white/5">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12">
+          <AnimatedElement className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">QUICK INFO</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto" />
+          </AnimatedElement>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <AnimatedElement delay={0}>
+              <div className="bg-white/5 p-8 rounded-lg border border-white/10 hover:border-primary/50 transition-colors h-full">
+                <QrCode className="w-10 h-10 text-primary mb-6" />
+                <h4 className="text-lg font-heading text-white mb-3">Registration</h4>
+                <p className="text-sm text-foreground/60 mb-4">Scan QR code or visit www.fusion2025.in</p>
+                <p className="text-xs font-mono text-primary">Fee: ₹1,000/-</p>
+              </div>
+            </AnimatedElement>
+
+            <AnimatedElement delay={100}>
+              <div className="bg-white/5 p-8 rounded-lg border border-white/10 hover:border-secondary/50 transition-colors h-full">
+                <Users className="w-10 h-10 text-secondary mb-6" />
+                <h4 className="text-lg font-heading text-white mb-3">Team Details</h4>
+                <p className="text-sm text-foreground/60 mb-4">Max 4 members per team</p>
+                <p className="text-xs font-mono text-secondary">Lunch included!</p>
+              </div>
+            </AnimatedElement>
+
+            <AnimatedElement delay={200}>
+              <div className="bg-white/5 p-8 rounded-lg border border-white/10 hover:border-primary/50 transition-colors h-full">
+                <Calendar className="w-10 h-10 text-primary mb-6" />
+                <h4 className="text-lg font-heading text-white mb-3">Dates</h4>
+                <p className="text-sm text-foreground/60">9<sup>th</sup> - 10<sup>th</sup> October</p>
+                <p className="text-xs font-mono text-primary mt-2">24 Hours Non-Stop</p>
+              </div>
+            </AnimatedElement>
+
+            <AnimatedElement delay={300}>
+              <div className="bg-white/5 p-8 rounded-lg border border-white/10 hover:border-secondary/50 transition-colors h-full">
+                <Trophy className="w-10 h-10 text-secondary mb-6" />
+                <h4 className="text-lg font-heading text-white mb-3">Prizes</h4>
+                <p className="text-sm text-foreground/60 mb-2">₹2,00,000+ Pool</p>
+                <p className="text-xs font-mono text-secondary">+ Gadgets & Trip</p>
+              </div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
       <section className="relative py-24 bg-background border-t border-white/5">
         <div className="max-w-4xl mx-auto text-center px-6">
           <AnimatedElement>
             <Activity className="w-16 h-16 text-secondary mx-auto mb-8 animate-pulse" />
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-              READY FOR THE NEXT ITERATION?
+              READY TO INNOVATE?
             </h2>
-            <p className="text-xl text-foreground/60 mb-10">
-              The code has compiled, but the journey continues. Stay tuned for FUSION 2.0.
+            <p className="text-xl text-foreground/60 mb-4">
+              Join us for FUSION 2025 - The Ultimate 24-Hour Hackathon Experience
             </p>
-            <div className="flex justify-center gap-6">
-              <button className="px-10 py-4 bg-primary text-background font-bold font-heading tracking-wider hover:bg-primary/90 transition-colors clip-path-button">
-                JOIN WAITLIST
-              </button>
+            <p className="text-lg text-foreground/50 mb-10 font-mono">
+              📱 +91 9167904386 | 📧 contact@fusion2025.in
+            </p>
+            <div className="flex justify-center gap-6 flex-wrap">
+              <a href="https://www.fusion2025.in" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-secondary text-background font-bold font-heading tracking-wider hover:bg-secondary/90 transition-colors">
+                REGISTER NOW
+              </a>
+              <a href="https://www.instagram.com/iic_ecelisknisb" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-primary/10 border border-primary/50 text-primary font-bold font-heading tracking-wider hover:bg-primary/20 transition-colors">
+                FOLLOW US
+              </a>
             </div>
           </AnimatedElement>
         </div>
